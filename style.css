@@ -1,0 +1,128 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url("images/james_bond.jpg");
+    background-size: 100%;
+}
+
+h1 {
+    color: red;
+    font-size: 6rem;
+}
+
+.welcome {
+    background-color: black;
+    width: 35%;
+    padding: 5%;
+    margin: 5%;
+    color: yellow;
+    font-size: 1.5rem;
+    border: 1rem solid red;
+
+}
+
+.list_missions {
+    margin-top: 150px;
+    margin-left: 250px;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+#description {
+    background-color: white;
+    width: 45%;
+    margin-left: 80px;
+    margin-top: 80px;
+    font-size: 1.5rem;
+    padding: 50px;
+    border: solid;
+    border-width: 10px;
+    border-color: red;
+}
+
+#description .code {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.list {
+    margin-top: 100px;
+    margin-left: 270px;
+    font-size: 2.5rem;
+}
+
+.connect {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.yellow {
+   color:yellow;
+   margin-top: 15%;
+   margin-left: 18%;
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+h2 {
+    color: yellow;
+}
+
+.create {
+    background-color: #6cee6c;
+    position: absolute;
+    left: 8rem;
+    top: 0.5rem;
+    padding: 1rem;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+    position: absolute;
+    left: 8rem;
+    bottom: 1rem;
+    padding: 1rem;
+}
+
+.infos {
+    background-color: darkgray;
+    color: white;
+    position: absolute;
+    left: 40rem;
+    top: 0.5rem;
+    padding: 1rem;
+}
+
+.modif {
+    background-color: #00b7ff;
+    color: white;
+    position: absolute;
+    left: 40rem;
+    bottom: 1rem;
+    padding: 1rem;
+}
+
+.fixed {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+.back {
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    font-weight: bold;
+    font-size: large;
+}
+
+input, select {
+    font-size: 1rem;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #000057;
+    color: yellow;
+}
