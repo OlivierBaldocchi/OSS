@@ -1,6 +1,6 @@
 body {
     font-family: "Courier New", Courier, monospace;
-    background-image: url("images/james_bond.jpg");
+    background-image: url("https://php-postgre-studi.herokuapp.com/images/james_bond.jpg");
     background-size: 100%;
 }
 
