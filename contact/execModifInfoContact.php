@@ -1,12 +1,9 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body>
     <div class="yellow">
     <?php
-    include '../vue/buttonLogOut.php';
-    include '../vue/buttonBack.php';
-    require_once '../connect/dsn.php';
     
     $choix = $_POST['modif'];
     foreach($conn->query("SELECT * FROM contacts WHERE id = '$choix'", PDO::FETCH_ASSOC) as $user) {

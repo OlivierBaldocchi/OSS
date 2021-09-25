@@ -1,5 +1,5 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body class="yellow">
     <?php
@@ -16,7 +16,7 @@ require_once '../base.html';?>
             if (password_verify($_POST['password'], $user['mot_de_passe'])) {
                 session_start();
                 $_SESSION['connexion'] = 'ADMIN';
-                header("location:../dashboard/dashboard.php");
+                header("location:https://php-postgre-studi.herokuapp.com/dashboard/dashboard.php");
             } else {
                 echo 'Identifiants Invalides!';
             }

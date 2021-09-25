@@ -1,12 +1,10 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body class='yellow'>
 
     <?php
-    include '../vue/buttonLogOut.php';
-    include '../vue/buttonBack.php';
-    require_once '../connect/dsn.php';
+    
     
     $statement = $conn->prepare('INSERT INTO contacts(nom, prénom, date_de_naissance, nom_de_code, nationalité) 
                                     VALUES (:nom, :prenom, :birth, :code, :pays)');

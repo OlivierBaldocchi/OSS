@@ -1,12 +1,10 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body class='yellow'>
 
     <?php
-    include '../vue/buttonLogOut.php';
-    include '../vue/buttonBack.php';
-    require_once '../connect/dsn.php';
+    
     
     $statement = $conn->prepare('INSERT INTO admins(nom, prénom, mail, mot_de_passe, date_création) VALUES (:nom, :prenom, :email, :password, :date_creation)');
     $statement->bindValue(':nom', $_POST['nom']);

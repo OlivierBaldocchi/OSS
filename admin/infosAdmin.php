@@ -1,13 +1,11 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body>
     <div id="description">
         
         <?php
-        include '../vue/buttonLogOut.php';
-        include '../vue/buttonBack.php';
-        require_once '../connect/dsn.php';
+        
             
             try {
                 $id = $_POST['infos'];

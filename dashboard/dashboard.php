@@ -1,8 +1,8 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body>
-    <?php include '../vue/buttonLogOut.php';
+    <?php include 'https://php-postgre-studi.herokuapp.com/vue/buttonLogOut.php';
     session_start();
 
     if (isset($_SESSION['connexion'])) {

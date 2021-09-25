@@ -3,4 +3,4 @@
 session_start();
 session_destroy();
 session_unset();
-header("location:http://localhost/OSS/index.php");
+header("location:https://php-postgre-studi.herokuapp.com");

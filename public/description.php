@@ -1,10 +1,10 @@
 <?php
-require_once '../base.html';?> 
+require_once 'https://php-postgre-studi.herokuapp.com/base.php';?> 
 
 <body>
     <div id="description">
         <?php
-        require_once '../connect/dsn.php';
+       
         
         try {
             $refmovie = $_GET['id'];
