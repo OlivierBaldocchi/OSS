@@ -1,12 +1,12 @@
 <?php
-require_once 'https://php-postgre-studi.herokuapp.com/base.html';
-require_once 'https://php-postgre-studi.herokuapp.com/include.php'?>
+include '..\base.html'; ?> 
+
 <body>
     <h2>Cliquez sur une des missions:</h2>
     <div class="list_missions"> 
              
         <?php
-        
+        require_once '../connect/dsn.php';
         
         try {
             foreach ($conn->query('SELECT id, titre  FROM missions', PDO::FETCH_ASSOC) as $user) {

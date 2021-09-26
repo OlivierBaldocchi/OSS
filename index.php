@@ -1,6 +1,5 @@
 <?php
-require_once 'https://php-postgre-studi.herokuapp.com/base.html';
-require_once 'https://php-postgre-studi.herokuapp.com/include.php'?>
+require 'https://php-postgre-studi.herokuapp.com/base.html' ?>
 
 <div>
     <h1 style="margin-left: 300px">Bienvenue au RDV</h1>
@@ -8,9 +7,9 @@ require_once 'https://php-postgre-studi.herokuapp.com/include.php'?>
     <h1 style="margin-left: 520px">Espions!</h1>
 </div>
 <div>
-    <h2 class="list"><a style="color: deepskyblue; margin-left: 100px" href='https://php-postgre-studi.herokuapp.com/public/missionsList.php'>Accéder à la liste des missions</a></h2>
+    <h2 class="list"><a style="color: deepskyblue; margin-left: 100px" href="public/missionsList.php">Accéder à la liste des missions</a></h2>
 </div>
 <div>
-    <h3 class="connect"><a style="color: orangered" href='https://php-postgre-studi.herokuapp.com/connect/connexion.php'>Connexion</a></h3>
+    <h3 class="connect"><a style="color: orangered" href="connect/connexion.php">Connexion</a></h3>
 </div>
     

@@ -1,4 +1,4 @@
 
 <div class="back">
-        <p><a style="color: orangered" href="https://php-postgre-studi.herokuapp.com/dashboard/dashboard.php">Retour</a></p>
+        <p><a style="color: orangered" href="../dashboard/dashboard.php">Retour</a></p>
 </div>

@@ -1,6 +1,6 @@
 <?php
-require_once 'https://php-postgre-studi.herokuapp.com/base.html';
-require_once 'https://php-postgre-studi.herokuapp.com/include.php'?>
+require_once 'https://php-postgre-studi.herokuapp.com/base.html';?> 
+
 <body class="yellow">
     <?php
 
@@ -16,7 +16,7 @@ require_once 'https://php-postgre-studi.herokuapp.com/include.php'?>
             if (password_verify($_POST['password'], $user['mot_de_passe'])) {
                 session_start();
                 $_SESSION['connexion'] = 'ADMIN';
-                header("location:https://php-postgre-studi.herokuapp.com/dashboard/dashboard.php");
+                header("location:../dashboard/dashboard.php");
             } else {
                 echo 'Identifiants Invalides!';
             }
