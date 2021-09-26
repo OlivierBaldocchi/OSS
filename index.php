@@ -1,5 +1,5 @@
 <?php
-require 'https://php-postgre-studi.herokuapp.com/base.html' ?>
+require 'base.html' ?>
 
 <div>
     <h1 style="margin-left: 300px">Bienvenue au RDV</h1>
