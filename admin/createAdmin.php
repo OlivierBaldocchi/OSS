@@ -14,6 +14,7 @@ require_once '../base.html';?>
     $statement->bindValue(':email', $_POST['mail']);
     $statement->bindValue(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
     $statement->bindValue(':date_creation', $_POST['date_creation']);
+    
     if ($statement->execute()) {
         echo 'Bravo!' . '<br>' . 'L\'administrateur ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créé';
     } else {

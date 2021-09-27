@@ -1,7 +1,7 @@
 <?php
 
 try {
-    foreach ($conn->query('SELECT id, prénom, nom FROM contacts', PDO::FETCH_ASSOC) as $user) {
+    foreach ($conn->query('SELECT id, prenom, nom FROM contacts', PDO::FETCH_ASSOC) as $user) {
     $id = $user['id'];
     $nom = $user['nom'];
     $prenom = $user['prenom'];
