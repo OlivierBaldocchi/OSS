@@ -1,5 +1,5 @@
 <?php
-include '..\base.html'; ?> 
+include '../base.html'; ?> 
 
 <body>
     <h2>Cliquez sur une des missions:</h2>

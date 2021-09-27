@@ -1,5 +1,5 @@
 <?php
-require_once '../base.html';?> 
+require_once '../base.html';?>  
 
 <body class='yellow'>
 
