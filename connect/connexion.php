@@ -1,5 +1,5 @@
 <?php
-require 'https://php-postgre-studi.herokuapp.com/base.html';?> 
+require '../base.html';?> 
 
 <body>
     <div class="form">
