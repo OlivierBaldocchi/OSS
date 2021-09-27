@@ -16,15 +16,15 @@ require_once '../base.html';?>
     $specialite = $_POST['specialite'];
     
     
-    $sth = $conn->prepare("SELECT nationalité FROM agents WHERE id = '$choixAgent' ");
+    $sth = $conn->prepare("SELECT nationalite FROM agents WHERE id = '$choixAgent' ");
     $sth-> execute();
     $resultat1 = $sth->fetch(PDO::FETCH_ASSOC);
 
-    $sth = $conn->prepare("SELECT nationalité FROM cibles WHERE id = '$choixCible' ");
+    $sth = $conn->prepare("SELECT nationalite FROM cibles WHERE id = '$choixCible' ");
     $sth-> execute();
     $resultat2 = $sth->fetch(PDO::FETCH_ASSOC);
     
-    $sth = $conn->prepare("SELECT nationalité FROM contacts WHERE id = '$choixContact' ");
+    $sth = $conn->prepare("SELECT nationalite FROM contacts WHERE id = '$choixContact' ");
     $sth-> execute();
     $resultat3 = $sth->fetch(PDO::FETCH_ASSOC);
 
@@ -32,18 +32,18 @@ require_once '../base.html';?>
     $sth-> execute();
     $resultat4 = $sth->fetch(PDO::FETCH_ASSOC);
 
-    $sth = $conn->prepare("SELECT spécialité FROM agents WHERE id = '$choixAgent' ");
+    $sth = $conn->prepare("SELECT specialite FROM agents WHERE id = '$choixAgent' ");
     $sth-> execute();
     $resultat5 = $sth->fetch(PDO::FETCH_ASSOC);
 
 
-    if ($resultat1['nationalité'] !== $resultat2['nationalité'] &&
-        $resultat3['nationalité'] === $choixPaysMission && 
+    if ($resultat1['nationalite'] !== $resultat2['nationalite'] &&
+        $resultat3['nationalite'] === $choixPaysMission && 
         $resultat4['pays'] === $choixPaysMission &&
-        stripos($resultat5['spécialité'], $specialite) !== FALSE) {
+        stripos($resultat5['specialite'], $specialite) !== FALSE) {
         
         $statement = $conn->prepare('INSERT INTO missions(titre, description, nom_de_code, pays, agent, contact, type_mission, 
-                                                    statut, planque, cible, spécialité_requise, date_début, date_fin) 
+                                                    statut, planque, cible, specialite_requise, date_debut, date_fin) 
                                     VALUES (:title, :description, :code, :pays, :agent, :contact, :type, 
                                             :statut, :planque, :cible, :specialite, :start, :end)');
 

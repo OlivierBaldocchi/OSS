@@ -20,21 +20,21 @@ require_once '../base.html';?>
         $statut = ($_POST['statut'] === "") ? $user['statut'] : $_POST['statut'];   
         $planque = ($_POST['planque'] === "") ? $user['planque'] : $_POST['planque'];   
         $cible = ($_POST['cible'] === "") ? $user['cible'] : $_POST['cible'];   
-        $specialite = ($_POST['specialite'] === "") ? $user['spécialité_requise'] : $_POST['specialite'];
-        $start = ($_POST['start'] === "") ? $user['date_début'] : $_POST['start'];
+        $specialite = ($_POST['specialite'] === "") ? $user['specialite_requise'] : $_POST['specialite'];
+        $start = ($_POST['start'] === "") ? $user['date_debut'] : $_POST['start'];
         $end = ($_POST['end'] === "") ? $user['date_fin'] : $_POST['end'];
     }
 
 
-    $sth = $conn->prepare("SELECT nationalité FROM agents WHERE id = '$agent' ");
+    $sth = $conn->prepare("SELECT nationalite FROM agents WHERE id = '$agent' ");
     $sth-> execute();
     $resultat1 = $sth->fetch(PDO::FETCH_ASSOC);
 
-    $sth = $conn->prepare("SELECT nationalité FROM cibles WHERE id = '$cible' ");
+    $sth = $conn->prepare("SELECT nationalite FROM cibles WHERE id = '$cible' ");
     $sth-> execute();
     $resultat2 = $sth->fetch(PDO::FETCH_ASSOC);
     
-    $sth = $conn->prepare("SELECT nationalité FROM contacts WHERE id = '$contact' ");
+    $sth = $conn->prepare("SELECT nationalite FROM contacts WHERE id = '$contact' ");
     $sth-> execute();
     $resultat3 = $sth->fetch(PDO::FETCH_ASSOC);
 
@@ -42,20 +42,20 @@ require_once '../base.html';?>
     $sth-> execute();
     $resultat4 = $sth->fetch(PDO::FETCH_ASSOC);
 
-    $sth = $conn->prepare("SELECT spécialité FROM agents WHERE id = '$agent' ");
+    $sth = $conn->prepare("SELECT specialite FROM agents WHERE id = '$agent' ");
     $sth-> execute();
     $resultat5 = $sth->fetch(PDO::FETCH_ASSOC);
 
 
-    if ($resultat1['nationalité'] !== $resultat2['nationalité'] &&
-        $resultat3['nationalité'] === $pays && 
+    if ($resultat1['nationalite'] !== $resultat2['nationalite'] &&
+        $resultat3['nationalite'] === $pays && 
         $resultat4['pays'] === $pays &&
-        stripos($resultat5['spécialité'], $specialite) !== FALSE) {
+        stripos($resultat5['specialite'], $specialite) !== FALSE) {
 
         $statement = $conn->prepare("UPDATE missions
                                     SET titre = :title, description = :description, nom_de_code = :code, pays = :pays, agent = :agent, 
                                     contact = :contact, type_mission = :type, statut = :statut, planque = :planque, cible = :cible, 
-                                    spécialité_requise = :specialite, date_début = :start, date_fin = :end
+                                    specialite_requise = :specialite, date_debut = :start, date_fin = :end
                                     WHERE id = '$choix' ");
 
         $statement->bindValue(':title', $title);

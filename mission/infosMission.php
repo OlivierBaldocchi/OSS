@@ -23,8 +23,8 @@ require_once '../base.html';?>
                     echo $user['statut'] . '<br>';
                     echo $user['planque'] . '<br>';
                     echo $user['cible'] . '<br>';
-                    echo $user['spécialité_requise'] . '<br>';
-                    echo $user['date_début'] . '<br>';
+                    echo $user['specialite_requise'] . '<br>';
+                    echo $user['date_debut'] . '<br>';
                     echo $user['date_fin'] . '<br>';
                 }
             } catch (PDOException $e) {

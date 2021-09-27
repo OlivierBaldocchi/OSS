@@ -8,7 +8,7 @@ require_once '../base.html';?>
     include '../vue/buttonBack.php';
     require_once '../connect/dsn.php';
     
-    $statement = $conn->prepare('INSERT INTO admins(nom, prénom, mail, mot_de_passe, date_création) VALUES (:nom, :prenom, :email, :password, :date_creation)');
+    $statement = $conn->prepare('INSERT INTO admins(nom, prenom, mail, mot_de_passe, date_creation) VALUES (:nom, :prenom, :email, :password, :date_creation)');
     $statement->bindValue(':nom', $_POST['nom']);
     $statement->bindValue(':prenom', $_POST['prenom']);
     $statement->bindValue(':email', $_POST['mail']);

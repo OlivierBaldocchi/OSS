@@ -11,12 +11,12 @@ require_once '../base.html';?>
     $choix = $_POST['modif'];
     foreach($conn->query("SELECT * FROM admins WHERE id = '$choix'", PDO::FETCH_ASSOC) as $user) {
         $nom = ($_POST['nom'] === "") ? $user['nom'] : $_POST['nom'];   
-        $prenom = ($_POST['prenom'] === "") ? $user['prénom'] : $_POST['prenom']; 
+        $prenom = ($_POST['prenom'] === "") ? $user['prenom'] : $_POST['prenom']; 
         $mail = ($_POST['mail'] === "") ? $user['mail'] : $_POST['mail']; 
         $password = ($_POST['password'] === "") ? $user['mot_de_passe'] : $_POST['password'];     
     }            
     $statement = $conn->prepare("UPDATE admins
-                                    SET nom = :nom, prénom = :prenom, mail = :email, mot_de_passe = :password
+                                    SET nom = :nom, prenom = :prenom, mail = :email, mot_de_passe = :password
                                     WHERE id = '$choix' ");
 
     $statement->bindValue(':nom', $nom);                       

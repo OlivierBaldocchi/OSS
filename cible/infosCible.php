@@ -14,9 +14,9 @@ require_once '../base.html';?>
                 foreach ($conn->query("SELECT * FROM cibles WHERE id = '$id' ", PDO::FETCH_ASSOC) as $user) {
                     echo $user['id'] . '<br>';
                     echo $user['nom'] . '<br>';
-                    echo $user['prénom'] . '<br>';
+                    echo $user['prenom'] . '<br>';
                     echo $user['date_de_naissance'] . '<br>';
-                    echo $user['nationalité'] . '<br>';
+                    echo $user['nationalite'] . '<br>';
                 }
             } catch (PDOException $e) {
                 echo 'Impossible de récupérer les informations';

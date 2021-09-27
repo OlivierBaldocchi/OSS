@@ -8,7 +8,7 @@ require_once '../base.html';?>
     include '../vue/buttonBack.php';
     require_once '../connect/dsn.php';
     
-    $statement = $conn->prepare('INSERT INTO contacts(nom, prénom, date_de_naissance, nom_de_code, nationalité) 
+    $statement = $conn->prepare('INSERT INTO contacts(nom, prenom, date_de_naissance, nom_de_code, nationalite) 
                                     VALUES (:nom, :prenom, :birth, :code, :pays)');
     $statement->bindValue(':nom', $_POST['nom']);
     $statement->bindValue(':prenom', $_POST['prenom']);
