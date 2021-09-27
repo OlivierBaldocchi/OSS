@@ -16,6 +16,7 @@ require_once '../base.html';?>
     $statement->bindValue(':pays', $_POST['pays']);
     $statement->bindValue(':specialite', $_POST['specialite']);
     $statement->bindValue(':code', $_POST['nom_de_code']);
+    
     if ($statement->execute()) {
         echo 'Bravo!' . '<br>' . 'L\'agent ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créé';
     } else {
