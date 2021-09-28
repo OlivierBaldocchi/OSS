@@ -7,9 +7,15 @@ require 'base.html' ?>
     <h1 style="margin-left: 520px">Espions!</h1>
 </div>
 <div>
-    <h2 class="list"><a style="color: deepskyblue; margin-left: 100px" href="https://php-postgre-studi.herokuapp.com/public/missionsList.php">Accéder à la liste des missions</a></h2>
+    <h2 class="list"><a style="color: deepskyblue; margin-left: 100px" href="public/missionsList.php">Accéder à la liste des missions</a></h2>
+    <form action="public/searchMission.php">
+        <div>
+            <h2>Rechercher une mission</h2>
+            <input type="text" placeholder="nom mission" id="mission" name="mission">
+        </div>
+    </form>
 </div>
 <div>
-    <h3 class="connect"><a style="color: orangered" href="https://php-postgre-studi.herokuapp.com/connect/connexion.php">Connexion</a></h3>
+    <h3 class="connect"><a style="color: orangered" href="connect/connexion.php">Connexion</a></h3>
 </div>
     
