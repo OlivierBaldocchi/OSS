@@ -8,17 +8,22 @@ require_once '../base.html';?>
     include '../vue/buttonBack.php';
     require_once '../connect/dsn.php';
     
-    $statement = $conn->prepare('INSERT INTO cibles(nom, prenom, date_de_naissance, nationalite) 
+    try {
+        $statement = $conn->prepare('INSERT INTO cibles(nom, prenom, date_de_naissance, nationalite) 
                                     VALUES (:nom, :prenom, :birth, :pays)');
-    $statement->bindValue(':nom', $_POST['nom']);
-    $statement->bindValue(':prenom', $_POST['prenom']);
-    $statement->bindValue(':birth', $_POST['date_de_naissance']);
-    $statement->bindValue(':pays', $_POST['pays']);
+        $statement->bindValue(':nom', $_POST['nom']);
+        $statement->bindValue(':prenom', $_POST['prenom']);
+        $statement->bindValue(':birth', $_POST['date_de_naissance']);
+        $statement->bindValue(':pays', $_POST['pays']);
 
-    if ($statement->execute()) {
-        echo 'Bravo!' . '<br>' . 'La cible ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créée';
-    } else {
-        echo 'Impossible de créer la cible';
+        if ($statement->execute()) {
+            echo 'Bravo!' . '<br>' . 'La cible ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créée';
+        } else {
+            echo 'Impossible de créer la cible';
+        }
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
+    
     ?>   
 </body>

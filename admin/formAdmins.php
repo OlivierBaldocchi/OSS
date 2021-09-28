@@ -11,6 +11,6 @@
     <input type="text" placeholder="mot de passe" id="password" name="password">
 </div>
 <div>
-    <input type="text" placeholder="date création jj/mm/AAAA" id="date_creation" name="date_creation">
+    <input type="text" placeholder="date création mm/jj/AAAA" id="date_creation" name="date_creation">
 </div>
 <p></p>

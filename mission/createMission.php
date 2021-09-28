@@ -42,37 +42,42 @@ require_once '../base.html';?>
         $resultat4['pays'] === $choixPaysMission &&
         stripos($resultat5['specialite'], $specialite) !== FALSE) {
         
-        $statement = $conn->prepare('INSERT INTO missions(titre, description, nom_de_code, pays, agent, contact, type_mission, 
+        try {
+            $statement = $conn->prepare('INSERT INTO missions(titre, description, nom_de_code, pays, agent, contact, type_mission, 
                                                     statut, planque, cible, specialite_requise, date_debut, date_fin) 
                                     VALUES (:title, :description, :code, :pays, :agent, :contact, :type, 
                                             :statut, :planque, :cible, :specialite, :start, :end)');
 
-        $statement->bindValue(':title', $_POST['titre']);
-        $statement->bindValue(':description', $_POST['description']);
-        $statement->bindValue(':code', $_POST['code']);
-        $statement->bindValue(':pays', $_POST['pays']);
-        $statement->bindValue(':agent', $_POST['agent']);
-        $statement->bindValue(':contact', $_POST['contact']);
-        $statement->bindValue(':type', $_POST['type']);
-        $statement->bindValue(':statut', $_POST['statut']);
-        $statement->bindValue(':planque', $_POST['planque']);
-        $statement->bindValue(':cible', $_POST['cible']);
-        $statement->bindValue(':specialite', $_POST['specialite']);
-        $statement->bindValue(':start', $_POST['start']);
-        $statement->bindValue(':end', $_POST['end']);
-    
+            $statement->bindValue(':title', $_POST['titre']);
+            $statement->bindValue(':description', $_POST['description']);
+            $statement->bindValue(':code', $_POST['code']);
+            $statement->bindValue(':pays', $_POST['pays']);
+            $statement->bindValue(':agent', $_POST['agent']);
+            $statement->bindValue(':contact', $_POST['contact']);
+            $statement->bindValue(':type', $_POST['type']);
+            $statement->bindValue(':statut', $_POST['statut']);
+            $statement->bindValue(':planque', $_POST['planque']);
+            $statement->bindValue(':cible', $_POST['cible']);
+            $statement->bindValue(':specialite', $_POST['specialite']);
+            $statement->bindValue(':start', $_POST['start']);
+            $statement->bindValue(':end', $_POST['end']);
+        
 
-        if ($statement->execute()) {
-            echo 'Bravo!' . '<br>' . 'La mission ' . '<br>' . $_POST['titre'] . '<br>' . ' a été créé';
+            if ($statement->execute()) {
+                echo 'Bravo!' . '<br>' . 'La mission ' . '<br>' . $_POST['titre'] . '<br>' . ' a été créé';
+            } else {
+                echo 'Impossible de créer la mission';
+            }
         } else {
-            echo 'Impossible de créer la mission';
+            echo 'Attention! Vous ne respectez pas les règles' .'<br>'. 
+                'concernant la nationalité des agents, cibles,' .'<br>'. 
+                'contacts et pays de la mission.' .'<br>'. 
+                'Veuillez consulter le guide...';
         }
-    } else {
-        echo 'Attention! Vous ne respectez pas les règles' .'<br>'. 
-            'concernant la nationalité des agents, cibles,' .'<br>'. 
-            'contacts et pays de la mission.' .'<br>'. 
-            'Veuillez consulter le guide...';
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
+        
     
     ?>   
 </body>

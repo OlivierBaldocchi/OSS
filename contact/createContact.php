@@ -8,18 +8,23 @@ require_once '../base.html';?>
     include '../vue/buttonBack.php';
     require_once '../connect/dsn.php';
     
-    $statement = $conn->prepare('INSERT INTO contacts(nom, prenom, date_de_naissance, nom_de_code, nationalite) 
+    try {
+        $statement = $conn->prepare('INSERT INTO contacts(nom, prenom, date_de_naissance, nom_de_code, nationalite) 
                                     VALUES (:nom, :prenom, :birth, :code, :pays)');
-    $statement->bindValue(':nom', $_POST['nom']);
-    $statement->bindValue(':prenom', $_POST['prenom']);
-    $statement->bindValue(':birth', $_POST['date_de_naissance']);
-    $statement->bindValue(':code', $_POST['nom_de_code']);
-    $statement->bindValue(':pays', $_POST['pays']);
+        $statement->bindValue(':nom', $_POST['nom']);
+        $statement->bindValue(':prenom', $_POST['prenom']);
+        $statement->bindValue(':birth', $_POST['date_de_naissance']);
+        $statement->bindValue(':code', $_POST['nom_de_code']);
+        $statement->bindValue(':pays', $_POST['pays']);
 
-    if ($statement->execute()) {
-        echo 'Bravo!' . '<br>' . 'Le contact ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créé';
-    } else {
-        echo 'Impossible de créer le contact';
+        if ($statement->execute()) {
+            echo 'Bravo!' . '<br>' . 'Le contact ' . '<br>' . $_POST['prenom'] . ' ' . $_POST['nom'] . '<br>' . ' a été créé';
+        } else {
+            echo 'Impossible de créer le contact';
+        }
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
+    
     ?>   
 </body>

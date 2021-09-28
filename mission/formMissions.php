@@ -33,9 +33,9 @@
     <label for="specialite">surveillance assassinat espionnage infiltration</label>
 </div>
 <div>
-    <input type="text" placeholder="date début jj/mm/AAAA" id="start" name="start">
+    <input type="text" placeholder="date début mm/jj/AAAA" id="start" name="start">
 </div>
 <div>
-    <input type="text" placeholder="date fin jj/mm/AAAA" id="end" name="end">
+    <input type="text" placeholder="date fin mm/jj/AAAA" id="end" name="end">
 </div>
 <p></p>
