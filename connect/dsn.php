@@ -9,6 +9,7 @@ $dsn = "pgsql:host=$host;port=5432;dbname=$dbname;user=$username;password=$passw
 
 try {
     $conn = new PDO($dsn);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $PDOException) {
     echo 'echec de la connexion';

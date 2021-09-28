@@ -21,4 +21,4 @@ require_once '../base.html';?>
         echo 'Impossible de créer la planque';
     }
     ?>   
-</body>
+</body> 
